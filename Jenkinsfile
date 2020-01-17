@@ -6,7 +6,7 @@ node{
 	}
 
 	stage('Build') {
-		sh "npm install"
+		bat "npm install"
 	 	try{
 		 sh "pwd"
 		 sh "ng build --prod"
