@@ -8,7 +8,7 @@ node{
 	stage('Build') {
 	 	try{
 		 sh "pwd"
-		 sh "ng build --prod"
+		 sh "npm run ng build --prod"
 		}catch (e){
 		 notifyStarted("Build Failed in Jenkins!")
 		 throw e
