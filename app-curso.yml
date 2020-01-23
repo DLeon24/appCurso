@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: app-curso-service
+spec: 
+  ports: 
+    - 
+      name: app-curso
+      port: 8080
+      protocol: TCP
+  selector: 
+    app: app-curso-svc
+    
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-curso-svc
+  labels:
+    app: app-curso-svc
+  namespace: development 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-curso-svc
+  template:
+    metadata:
+      labels:
+        app: app-curso-svc
+    spec:
+      containers:
+      - image: /angular/app-curso-svc:dev
+        imagePullPolicy: Always
+        name: app-curso-svc
+        ports:
+        - containerPort: 8080
+          protocol: TCP
