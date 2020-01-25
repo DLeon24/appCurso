@@ -2,9 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 
-#INTEGRANTES:
+INTEGRANTES:
 
-Diego Leon
+Diego Leon /
 Wilder Coronel
 
 ## Development server
